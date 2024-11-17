@@ -15,7 +15,7 @@ export const Navigation = () => {
           className="sm:hidden"
         />
         <NavbarBrand className={'flex-col items-start leading-none'}>
-          {/*<MyLogo />*/}
+          {/*<Background />*/}
           <div className="inline rounded-lg">
             <p className="px-2 pt-2 pb-0 text-lg font-bold leading-none"><span className="text-white bg-slate-800 p-1 pb-0">rueben</span></p>
             <p className="px-2 -mt- pb-2 text-lg leading-none">cumberbatch</p>
