@@ -5,6 +5,7 @@
 :root {
   --background: rgb(255, 255, 255);
   --foreground: rgb(23, 23, 23);
+  --primary: rgb(109, 40, 217);
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -23,9 +24,9 @@ body {
 .background {
   position: fixed;
   bottom: -5%; /* Pushes the image partially off the bottom */
-  right: -70%; /* Pushes the image partially off the left */
+  right: -110%; /* Pushes the image partially off the left */
   width: 160%; /* Makes sure the image is large enough */
-  height: 90vh;
+  height: 60vh;
   z-index: -1; /* Keeps it behind the main content */
 }
 
