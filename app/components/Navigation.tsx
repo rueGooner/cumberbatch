@@ -17,7 +17,7 @@ export const Navigation = () => {
         <NavbarBrand className={'flex-col items-start leading-none'}>
           {/*<Background />*/}
           <div className="inline rounded-lg">
-            <p className="px-2 pt-2 pb-0 text-lg font-bold leading-none"><span className="text-white bg-slate-800 p-1 pb-0">rueben</span></p>
+            <p className="px-2 pt-2 pb-0 text-lg font-bold leading-none"><span className="text-white bg-primary p-1 pb-0">rueben</span></p>
             <p className="px-2 -mt- pb-2 text-lg leading-none">cumberbatch</p>
           </div>
         </NavbarBrand>
@@ -28,9 +28,11 @@ export const Navigation = () => {
         {navigationItems.map((item) => (
           <NavbarItem key={item.href} isActive={pathname === item.href}>
             <Link
-              color="foreground"
+              color='foreground'
               href={item.href}
               aria-current={pathname === item.href ? "page" : undefined}
+              className={pathname === item.href ? 'bg-primary text-white px-1 rounded-sm hover:cursor-default' : 'bg-transparent' +
+                ' px-1 hover:text-primary hover:opacity-100'}
             >
               {item.name}
             </Link>
