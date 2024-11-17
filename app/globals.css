@@ -21,7 +21,6 @@ body {
 }
 
 .background {
-  background: url("../public/dark-blue-logo.png") no-repeat 600px 110%;
   position: fixed;
   bottom: -5%; /* Pushes the image partially off the bottom */
   right: -70%; /* Pushes the image partially off the left */
