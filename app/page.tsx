@@ -1,25 +1,20 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Navigation } from '@/app/components/Navigation';
+import { Background } from '@/app/components/Background';
+import { Introduction } from '@/app/components/Introduction';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Engine, Container, MoveDirection, OutMode, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
-import { Background } from '@/app/components/Background';
+import { IconSkills } from '@/app/components/IconSkills';
 
 export default function Home() {
   const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -33,11 +28,10 @@ export default function Home() {
     () => ({
       background: {
         color: {
-          value: "#dedede",
+          value: "var(--background)",
         },
-        opacity: 0.4
       },
-      fpsLimit: 120,
+      fpsLimit: 50,
       interactivity: {
         events: {
           onClick: {
@@ -61,13 +55,13 @@ export default function Home() {
       },
       particles: {
         color: {
-          value: "#6d28d9",
+          value: "rgb(255, 182, 193)",
         },
         links: {
-          color: "#6d28d9",
+          color: "rgb(255, 182, 193)",
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.2,
           width: 1,
         },
         move: {
@@ -77,7 +71,7 @@ export default function Home() {
             default: OutMode.out,
           },
           random: false,
-          speed: 2,
+          speed: 1,
           straight: false,
         },
         number: {
@@ -102,8 +96,8 @@ export default function Home() {
   );
 
   return (
-    <div className='h-full flex flex-col w-full min-h-screen'>
-      <Background />
+    <div className='container mx-auto w-full flex flex-col h-svh max-h-svh max-w-screen-xl'>
+      {/*<Background isSvg={false} />*/}
       <Navigation />
       {init && (
         <Particles
@@ -112,6 +106,8 @@ export default function Home() {
           particlesLoaded={particlesLoaded}
         />
       )}
+      <Introduction />
+      <IconSkills />
     </div>
   );
 }

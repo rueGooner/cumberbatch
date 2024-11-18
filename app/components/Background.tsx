@@ -22,41 +22,22 @@ export const Background: FC = () => {
     let timeoutId: NodeJS.Timeout;
 
     const changeColorWithRandomDelay = () => {
-      randomColor(); // Change to a random color
-      const delay = randomNumber(); // Get a new random delay
-      console.log('Next change in:', svgColor, delay, 'ms'); // Log the delay
+      randomColor();
+      const delay = randomNumber();
+      console.log('Next change in:', svgColor, delay, 'ms');
 
-      // Schedule the next color change
       timeoutId = setTimeout(changeColorWithRandomDelay, delay);
     };
 
     changeColorWithRandomDelay(); // Start the loop
 
-    // Cleanup function to clear timeout
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [svgColor]); // Run once on mount
+  }, [svgColor]);
 
-  // useEffect(() => {
-  //   let intervalId: NodeJS.Timeout;
-  //
-  //   const startRandomColorInterval = () => {
-  //     const delay = randomNumber();
-  //     intervalId = setInterval(() => {
-  //       randomColor();
-  //       console.log('IT FIRED', delay, svgColor);
-  //     }, delay);
-  //   };
-  //
-  //   startRandomColorInterval();
-  //
-  //   return () => {
-  //     clearInterval(intervalId);
-  //   };
-  // }, []);
-
-  return (<div className='background'>
+  return (
+    <div className='background'>
       <motion.svg width="801" height="696" viewBox="0 0 801 696" fill="none" xmlns="http://www.w3.org/2000/svg">
         <motion.path
           className='background-svg-path'
@@ -64,7 +45,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -72,7 +53,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -80,7 +61,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -88,7 +69,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -96,7 +77,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -104,7 +85,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -112,7 +93,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -120,7 +101,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -128,7 +109,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -136,7 +117,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -144,7 +125,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -152,7 +133,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -160,7 +141,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -168,7 +149,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -176,7 +157,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -184,7 +165,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -192,7 +173,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -200,7 +181,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -208,7 +189,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -216,7 +197,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -224,7 +205,7 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
         <motion.path
           className='background-svg-path'
@@ -232,10 +213,9 @@ export const Background: FC = () => {
           fill={svgColor}
           fillOpacity="0.13"
           transition={{duration: 1.5, ease: 'easeInOut'}}
-          animate={{ fill: svgColor }}
+          animate={{fill: svgColor}}
         />
       </motion.svg>
-
     </div>
   )
 
