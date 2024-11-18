@@ -5,16 +5,16 @@
 :root {
   --background: rgb(255, 255, 255);
   --foreground: rgb(23, 23, 23);
-  --primary: rgb(109, 40, 217);
+  --primary: rgb(255, 182, 193);
 }
 
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --background: rgb(15, 23, 42);*/
-/*    --foreground: rgb(237, 237, 237);*/
-/*    --primary: rgb(109, 40, 217);*/
-/*  }*/
-/*}*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(33, 39, 55);
+    --foreground: rgb(234, 237, 243);
+    --primary: rgb(255, 182, 193);
+  }
+}
 
 body {
   color: var(--foreground);

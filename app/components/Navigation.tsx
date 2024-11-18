@@ -8,7 +8,7 @@ export const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} height='80px'>
+    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="full" className='bg-background'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -17,10 +17,11 @@ export const Navigation = () => {
         <NavbarBrand className={'flex-col items-start leading-none'}>
           {/*<Background />*/}
           <div className="inline rounded-lg">
-            <p className="px-2 pt-2 pb-0 text-lg font-bold leading-none">
-              <span className="text-white bg-primary p-1 pb-0">rueben</span>
+            <p className="pr-2 py-0.5 text-lg font-bold leading-none">
+              <span className="text-white bg-primary p-0.5 pr-0 rounded-l dark:text-primary dark:bg-background dark:pl-0">rue</span>ben
             </p>
-            <p className="px-2 -mt- pb-2 text-lg leading-none">cumberbatch</p>
+            <p className="pr-2 pb-2 text-lg leading-none font-bold">cumber<span
+              className="text-white bg-primary p-0.5 pl-0 rounded-r dark:text-primary dark:bg-background">batch</span></p>
           </div>
         </NavbarBrand>
       </NavbarContent>
@@ -33,7 +34,8 @@ export const Navigation = () => {
               color='foreground'
               href={item.href}
               aria-current={pathname === item.href ? "page" : undefined}
-              className={pathname === item.href ? 'bg-primary text-white px-1 rounded-sm hover:cursor-default' : 'bg-transparent' +
+              className={pathname === item.href ? 'bg-primary text-white px-1 rounded-sm hover:cursor-default' +
+                ' dark:bg-background dark:text-primary' : 'bg-transparent' +
                 ' px-1 hover:text-primary hover:opacity-100'}
             >
               {item.name}
