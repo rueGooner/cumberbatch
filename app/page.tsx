@@ -6,8 +6,8 @@ import { Introduction } from '@/app/components/Introduction';
 export default function Home() {
   return (
     <div className='container mx-auto w-full flex flex-col h-svh max-h-svh max-w-screen-xl'>
-      <Background/>
-      <Navigation/>
+      <Background isSvg={false} />
+      <Navigation />
       <Introduction />
     </div>
   );
