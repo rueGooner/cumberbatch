@@ -108,7 +108,7 @@ export default function Home() {
       {init && (
         <Particles
           id="tsparticles"
-          options={options} // Apply the particle options here
+          options={options}
           particlesLoaded={particlesLoaded}
         />
       )}
