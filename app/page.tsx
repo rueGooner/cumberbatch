@@ -7,6 +7,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Engine, Container, MoveDirection, OutMode, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { IconGrid } from '@/app/components/IconGrid';
+import { ContactForm } from '@/app/components/ContactForm';
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -108,14 +109,17 @@ export default function Home() {
         <Introduction />
       </div>
       <div className="w-full relative section-two">
-        <div className="container mx-auto px-6 w-full flex flex-col justify-center pt-40">
+        <div className="container mx-auto px-6 w-full flex flex-col justify-center pt-32">
           <div className="flex items-center justify-center">
             <h3 className="text-4xl pb-2 text-center font-bold text-background border-b-2 border-primary">
-              What I Bring to the Table
+              What I Bring to the Table.
             </h3>
           </div>
           <IconGrid/>
         </div>
+      </div>
+      <div className="w-full relative section-three">
+        <ContactForm />
       </div>
     </div>
   );

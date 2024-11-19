@@ -22,15 +22,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.background {
-  position: fixed;
-  bottom: -5%; /* Pushes the image partially off the bottom */
-  right: -110%; /* Pushes the image partially off the left */
-  width: 160%; /* Makes sure the image is large enough */
-  height: 60vh;
-  z-index: -1; /* Keeps it behind the main content */
-}
-
 .section-two {
   background-color: var(--foreground);
   color: var(--primary);

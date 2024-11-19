@@ -18,7 +18,7 @@ import {
   SiSass,
   SiNodedotjs,
   SiPhp,
-  SiLaravel,
+  SiLaravel, SiTestinglibrary, SiJest, SiCypress,
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
 
@@ -41,10 +41,13 @@ const icons = [
   { Component: SiNodedotjs, name: "Node.js", color: "#339933" },
   { Component: SiPhp, name: "PHP", color: "#777BB4" },
   { Component: SiLaravel, name: "Laravel", color: "#FF2D20" },
+  { Component: SiTestinglibrary, name: "React Testing Library", color: "#E33332" },
+  { Component: SiJest, name: "Jest", color: "#C21325" },
+  { Component: SiCypress, name: "Cypress", color: "#17202C" },
 ];
 
 export const IconGrid = () => (
-  <div className="grid grid-cols-6 gap-2 py-20">
+  <div className="grid grid-cols-7 gap-2 py-20">
     {icons.map(({ Component, name, color }, index) => (
       <div key={index} className="flex items-center justify-center py-5 rounded">
         <motion.div
@@ -58,7 +61,7 @@ export const IconGrid = () => (
             delay: index * 0.2,
           }}
         >
-          <Component size={110} title={name} color={color}/>
+          <Component size={100} title={name} color={color}/>
         </motion.div>
       </div>
     ))}
