@@ -32,7 +32,7 @@ export const TypewriteText: FC<TypewriteTextProps> = ({
     return () => clearInterval(intervalId);
   }, [sentences.length, swapDelay]);
 
-  const MotionTypographyElement = motion(
+  const MotionTypographyElement = motion.create(
     TypographyElement as keyof JSX.IntrinsicElements
   );
 

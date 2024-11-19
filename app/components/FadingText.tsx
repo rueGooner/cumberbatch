@@ -30,7 +30,7 @@ export const FadingText: FC<FadingTextProps> = ({
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
-  const MotionTypographyElement = motion(
+  const MotionTypographyElement = motion.create(
     TypographyElement as keyof JSX.IntrinsicElements
   );
 

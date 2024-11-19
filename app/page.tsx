@@ -33,6 +33,7 @@ export default function Home() {
       },
       fpsLimit: 50,
       interactivity: {
+        detectsOn: "canvas",
         events: {
           onClick: {
             enable: true,
@@ -97,7 +98,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen relative">
-      <div className='container mx-auto w-full flex flex-col max-w-screen-xl'>
+      <div className='container mx-auto w-full flex flex-col max-w-screen-xl h-screen'>
         <Navigation />
         {init && (
           <Particles
@@ -118,9 +119,10 @@ export default function Home() {
           <IconGrid/>
         </div>
       </div>
-      <div className="w-full relative section-three">
+      <div className="w-full relative section-three z-10">
         <ContactForm />
       </div>
+
     </div>
   );
 }
