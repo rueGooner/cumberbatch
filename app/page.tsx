@@ -2,12 +2,11 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { Navigation } from '@/app/components/Navigation';
-import { Background } from '@/app/components/Background';
 import { Introduction } from '@/app/components/Introduction';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Engine, Container, MoveDirection, OutMode, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
-import { IconSkills } from '@/app/components/IconSkills';
+import { IconGrid } from '@/app/components/IconGrid';
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -96,18 +95,28 @@ export default function Home() {
   );
 
   return (
-    <div className='container mx-auto w-full flex flex-col h-svh max-h-svh max-w-screen-xl'>
-      {/*<Background isSvg={false} />*/}
-      <Navigation />
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={options}
-          particlesLoaded={particlesLoaded}
-        />
-      )}
-      <Introduction />
-      <IconSkills />
+    <div className="w-full h-screen relative">
+      <div className='container mx-auto w-full flex flex-col max-w-screen-xl'>
+        <Navigation />
+        {init && (
+          <Particles
+            id="tsparticles"
+            options={options}
+            particlesLoaded={particlesLoaded}
+          />
+        )}
+        <Introduction />
+      </div>
+      <div className="w-full relative section-two">
+        <div className="container mx-auto px-6 w-full flex flex-col justify-center pt-40">
+          <div className="flex items-center justify-center">
+            <h3 className="text-4xl pb-2 text-center font-bold text-background border-b-2 border-primary">
+              What I Bring to the Table
+            </h3>
+          </div>
+          <IconGrid/>
+        </div>
+      </div>
     </div>
   );
 }
