@@ -99,7 +99,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen relative">
-      <div className='container mx-auto w-full flex flex-col max-w-screen-xl h-screen'>
+      <div className='container mx-auto w-full flex flex-col max-w-screen-xl'>
         <Navigation/>
         {init && (
           <Particles
@@ -111,7 +111,7 @@ export default function Home() {
         <Introduction/>
       </div>
       <div className="w-full relative section-two">
-        <div className="container mx-auto px-6 w-full flex flex-col justify-center pt-32">
+        <div className="container mx-auto px-6 w-full flex flex-col justify-center py-32">
           <div className="flex items-center justify-center">
             <h3 className="text-4xl pb-2 text-center font-bold text-background border-b-2 border-primary">
               What I Bring to the Table.
