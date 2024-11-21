@@ -7,7 +7,8 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Engine, Container, MoveDirection, OutMode, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { IconGrid } from '@/app/components/IconGrid';
-import { ContactForm } from '@/app/components/ContactForm';
+import { RiGithubLine, RiLinkedinLine, RiMailStarLine } from 'react-icons/ri';
+import { Link } from '@nextui-org/react';
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -88,7 +89,7 @@ export default function Home() {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: {min: 1, max: 5},
         },
       },
       detectRetina: true,
@@ -99,7 +100,7 @@ export default function Home() {
   return (
     <div className="w-full h-screen relative">
       <div className='container mx-auto w-full flex flex-col max-w-screen-xl h-screen'>
-        <Navigation />
+        <Navigation/>
         {init && (
           <Particles
             id="tsparticles"
@@ -107,7 +108,7 @@ export default function Home() {
             particlesLoaded={particlesLoaded}
           />
         )}
-        <Introduction />
+        <Introduction/>
       </div>
       <div className="w-full relative section-two">
         <div className="container mx-auto px-6 w-full flex flex-col justify-center pt-32">
@@ -119,10 +120,31 @@ export default function Home() {
           <IconGrid/>
         </div>
       </div>
-      <div className="w-full relative section-three z-10">
-        <ContactForm />
+      <div className="w-full relative section-three z-10 bg-background py-32">
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-4xl pb-2 text-center font-bold text-foreground border-b-2 border-primary">
+            How to reach me.
+          </h3>
+          <h4 className="text-2xl mt-4">Social Media Links</h4>
+          <div className="grid grid-cols-3 gap-8 py-10">
+            <Link
+              isExternal href="https://www.linkedin.com/in/ruebencumberbatch/"
+              className="text-linkedin hover:text-primary">
+              <RiLinkedinLine size={100}/>
+            </Link>
+            <Link
+              isExternal href="mailto:development.rue@gmail.com"
+              className="text-gmail hover:text-primary">
+              <RiMailStarLine size={100}/>
+            </Link>
+            <Link
+              isExternal href="https://github.com/rueGooner/"
+              className="text-github hover:text-primary">
+              <RiGithubLine size={100}/>
+            </Link>
+          </div>
+        </div>
       </div>
-
     </div>
   );
 }

@@ -12,7 +12,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)"
+        primary: "var(--primary)",
+        gmail: "var(--brand-google-mail)",
+        github: "var(--brand-github)",
+        linkedin: "var(--brand-linkedin)"
       },
     },
   },
