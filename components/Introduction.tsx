@@ -1,9 +1,9 @@
 import React from 'react';
-import { FadingText } from '@/app/components/FadingText';
-import { TypewriteText } from '@/app/components/TypewriteText';
+import { FadingText } from '@/components/typography/FadingText';
+import { TypewriteText } from '@/components/typography/TypewriteText';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
-import { AnimatedCircle } from '@/app/components/AnimatedCircle';
+import { AnimatedCircle } from '@/components/AnimatedCircle';
 
 const LETTER_DELAY = 0.095;
 const BOX_FADE_DURATION = 0.225;

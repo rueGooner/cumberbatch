@@ -21,6 +21,8 @@ import {
   SiLaravel, SiTestinglibrary, SiJest, SiCypress,
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
+import { FC, ReactNode } from 'react';
 
 const icons = [
   { Component: RiNextjsLine, name: "Next.js", color: "#000000" },
@@ -46,24 +48,38 @@ const icons = [
   { Component: SiCypress, name: "Cypress", color: "#17202C" },
 ];
 
-export const IconGrid = () => (
-  <div className="grid grid-cols-7 gap-2 py-20">
-    {icons.map(({ Component, name, color }, index) => (
-      <div key={index} className="flex items-center justify-center py-5 rounded">
-        <motion.div
-          animate={{
-            y: [0, -5, 0]
-          }}
-          transition={{
-            duration: Math.random() * 1.5 + 1,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            delay: index * 0.2,
-          }}
-        >
-          <Component size={100} title={name} color={color}/>
-        </motion.div>
+interface IconGridProps {
+  children?: ReactNode;
+}
+
+export const IconGrid: FC<IconGridProps> = ({ children }) => {
+  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+  const iconSize = isSmallScreen ? 50 : 100;
+
+  return (
+    <div className="w-full relative section-two py-32">
+      <div className="container mx-auto px-6 flex flex-col items-center justify-center  max-w-screen-xl">
+        {children}
+        <div className="w-full grid grid-cols-7 gap-2 pt-20">
+          {icons.map(({Component, name, color}, index) => (
+            <div key={index} className="flex items-center justify-center py-5 rounded">
+              <motion.div
+                animate={{
+                  y: [0, -5, 0]
+                }}
+                transition={{
+                  duration: Math.random() * 1.5 + 1,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  delay: index * 0.2,
+                }}
+              >
+                <Component size={iconSize} title={name} color={color}/>
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-);
+    </div>
+  )
+};

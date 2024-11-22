@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { Navigation } from '@/app/components/Navigation';
-import { Introduction } from '@/app/components/Introduction';
+import { Introduction } from '@/components/Introduction';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Engine, Container, MoveDirection, OutMode, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
-import { IconGrid } from '@/app/components/IconGrid';
+import { IconGrid } from '@/components/IconGrid';
 import { RiGithubLine, RiLinkedinLine, RiMailStarLine } from 'react-icons/ri';
 import { Link } from '@nextui-org/react';
+import { SkillSection } from '@/components/SkillSection';
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -100,7 +100,6 @@ export default function Home() {
   return (
     <div className="w-full h-screen relative">
       <div className='container mx-auto w-full flex flex-col max-w-screen-xl'>
-        <Navigation/>
         {init && (
           <Particles
             id="tsparticles"
@@ -108,19 +107,15 @@ export default function Home() {
             particlesLoaded={particlesLoaded}
           />
         )}
-        <Introduction/>
       </div>
-      <div className="w-full relative section-two">
-        <div className="container mx-auto px-6 w-full flex flex-col justify-center py-32">
-          <div className="flex items-center justify-center">
-            <h3 className="text-4xl pb-2 text-center font-bold text-background border-b-2 border-primary">
-              What I Bring to the Table.
-            </h3>
-          </div>
-          <IconGrid/>
-        </div>
-      </div>
-      <div className="w-full relative section-three z-10 bg-background py-32">
+      <Introduction/>
+      <IconGrid>
+        <h3 className="text-4xl pb-2 text-center font-bold text-background border-b-2 border-primary">
+          What I Bring to the Table.
+        </h3>
+      </IconGrid>
+      <SkillSection/>
+      <div className="w-full relative section-four z-10 bg-background py-32 -mt-1">
         <div className="flex flex-col items-center justify-center">
           <h3 className="text-4xl pb-2 text-center font-bold text-foreground border-b-2 border-primary">
             How to reach me.
