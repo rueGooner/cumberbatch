@@ -37,3 +37,15 @@ body {
   height: 100%;
   z-index: -1 !important;
 }
+
+.title-text {
+  font-family: poppins, sans-serif;
+  -webkit-text-stroke: 1px var(--primary);
+  -moz-text-stroke: 1px var(--primary);
+  text-stroke: 1px var(--primary);
+  -webkit-text-fill-color:var(--foreground);
+  -moz-text-fill-color:var(--foreground);
+  text-fill-color:var(--foreground);
+  opacity: .75999999046325684;
+  margin: 0;
+}
